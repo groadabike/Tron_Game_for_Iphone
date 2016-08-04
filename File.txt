@@ -1,0 +1,70 @@
+
+-(IBAction)buttonUp{
+if (user <= 17){
+[self endGame];
+}else{
+TromView *mov=[[TromView alloc] init];
+int pos = user-18;
+user = pos;
+mov = self.trom[pos];
+UIColor *a =mov.backgroundColor;
+if(a == [UIColor blueColor] ){
+mov.backgroundColor=[UIColor greenColor];
+}else{
+[self endGame];
+}
+}
+}
+
+-(IBAction)buttonDown{
+if (user >= 306){
+[self endGame];
+}else{
+TromView *mov=[[TromView alloc] init];
+int pos =user+18;
+user = pos;
+mov = self.trom[pos];
+UIColor *a =mov.backgroundColor;
+if(a == [UIColor blueColor] ){
+mov.backgroundColor=[UIColor greenColor];
+}else{
+[self endGame];
+}
+}
+}
+
+
+-(IBAction)buttonLef{
+if(user ==18*(abs(user/18)) ){
+[self endGame];
+}else{
+TromView *mov=[[TromView alloc] init];
+int pos =user-1;
+user = pos;
+mov = self.trom[pos];
+UIColor *a =mov.backgroundColor;
+if(a == [UIColor blueColor] ){
+mov.backgroundColor=[UIColor greenColor];
+}else{
+[self endGame];
+}
+}
+}
+
+
+-(IBAction)buttonRight{
+if(user == (17*(abs(user/18) + 1)+(abs(user/18)))){
+[self endGame];
+}else{
+TromView *mov=[[TromView alloc] init];
+int pos =user+1;
+user = pos;
+mov = self.trom[pos];
+UIColor *a =mov.backgroundColor;
+if(a == [UIColor blueColor] ){
+mov.backgroundColor=[UIColor greenColor];
+}else{
+[self endGame];
+}
+}
+}
